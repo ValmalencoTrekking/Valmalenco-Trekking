@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un sito internet dove si possono vedere tutte le passeggiate della Valmalenco">
+    <meta name="author" content="Samuel Fassi">
+    <link rel="icon" href="/Logo_valmalencotrekking.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <title> Rifugi Valmalenco </title>
+</head>
+<body>
+    <header>
+
+        <div class="barraSopra">
+            <a href="/index.html" class="logo-link">
+                <img src="/Logo_valmalencotrekking.png" width="70" height="70" alt="Logo">
+            </a>
+            
+            <h1>Valmalenco Trekking</h1>
+            
+            <!-- NAVIGAZIONE DA DESKTOP: -->
+            <nav class="desktop-menu">
+                <a href="/laghi.html">Laghi</a>
+                <a href="/camminate.html">Camminate</a>
+                <a href="/rifugi.html">Rifugi</a>
+                <a href="/ristoranti.html">Ristoranti</a>
+            </nav>
+        
+            <button class="hamburger" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div> 
+        
+        <!-- NAVIGAZIONE DA MOBILE: -->
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="/laghi.html">Laghi</a></li>
+                <li><a href="/camminate.html">Camminate</a></li>
+                <li><a href="/rifugi.html">Rifugi</a></li>
+                <li><a href="/ristoranti.html">Ristoranti</a></li>
+            </ul>
+        </nav>
+    
+    </header>
+
+    <main class="pagina-rifugio">
+    
+        <h1 class="titolo-rifugio">Rifugio Zoia</h1>
+    
+        <section class="blocco-superiore">
+            
+            <div class="box-foto-rifugio">
+                <img src="/immagine_non_disponibile.jpg" alt="Rifugio Zoia" class="foto-rifugio">
+                </div>
+    
+            <div class="box-dati-tecnici">
+                <ul>
+                    <li><span class="etichetta-dato">ALTITUDINE:</span> 2.021 m</li>
+                    <li><span class="etichetta-dato">TEMPO:</span> 10 minuti</li>
+                    <li><span class="etichetta-dato">PARTENZA:</span> Strada Chiesa-Campo Moro</li>
+                    <li><span class="etichetta-dato">DISLIVELLO:</span> +40m</li>
+                    <li>
+                        <span class="etichetta-dato">GIRARIFUGI:</span> 
+                        <span class="badge-girarifugi si">SÌ - (★☆☆)</span>
+                    </li>
+                </ul>
+            </div>
+            
+        </section>
+    
+        <section class="blocco-descrizioni">
+            
+            <div class="sezione-testo">
+                <h3>COME ARRIVARE:</h3>
+                <p>Il rifugio è facilmente raggiungibile in automobile, proprio come il vicino Rifugio Poschiavino. Si percorre la strada carrozzabile che sale da Lanzada in Valmalenco fino a raggiungere la località di Campo Moro. La struttura è situata in prossimità dei parcheggi che servono le dighe, rendendolo una meta accessibile per chiunque voglia godersi la montagna senza dover affrontare lunghe camminate in salita.</p>
+            </div>
+    
+            <div class="sezione-testo">
+                <h3>COSA MANGIARE:</h3>
+                <p>La cucina del rifugio è quella classica della tradizione montana valtellinese. È possibile gustare ottimi piatti energetici come pizzoccheri, polenta taragna con formaggi d'alpeggio e i famosi sciatt. L'atmosfera è accogliente e conviviale, perfetta per una sosta rigenerante prima o dopo un'escursione in alta quota.</p>
+            </div>
+    
+            <div class="sezione-testo">
+                <h3>COSA VEDERE:</h3>
+                <p>Il Rifugio Zoia si trova in un punto strategico per chi desidera esplorare l'alta Valmalenco. La sua posizione permette di godere di una vista diretta sulle imponenti dighe di Campo Moro e di Gera. È il punto di partenza ideale per escursioni verso il Rifugio Marinelli Bombardieri, il ghiacciaio di Fellaria o per semplici passeggiate panoramiche tra i bacini artificiali, in un ambiente dominato dai colossi ghiacciati del Bernina.</p>
+            </div>
+    
+        </section>
+    
+    </main>
+
+    <!-- Footer del sito: -->
+    <footer>
+        <p class="footer-line1">&copy; Copyright 2026 by Samuel Fassi. Tutti i diritti riservati.</p>
+        <p class="footer-line2">Sito web dedicato al trekking e alle escursioni in Valmalenco.</p>
+        <p class="footer-email">Contattami via email per segnalazioni o informazioni: <a href="mailto:valmalencotrekking@gmail.com">valmalencotrekking@gmail.com</a></p>
+        <div class="footer-line3">
+            <a href="https://www.youtube.com/channel/UCmB-2SC7HT0yPLan3Nk91rg" target="_blank">YouTube</a>
+                <span>•</span>
+            <a href="https://www.instagram.com/valmalenco_trekking/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- Il menù a tendina:  -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

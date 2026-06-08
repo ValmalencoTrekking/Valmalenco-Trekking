@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un sito internet dove si possono vedere tutte le passeggiate della Valmalenco">
+    <meta name="author" content="Samuel Fassi">
+    <link rel="icon" href="/Logo_valmalencotrekking.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <title> Rifugi Valmalenco </title>
+</head>
+<body>
+    <header>
+
+        <div class="barraSopra">
+            <a href="/index.html" class="logo-link">
+                <img src="/Logo_valmalencotrekking.png" width="70" height="70" alt="Logo">
+            </a>
+            
+            <h1>Valmalenco Trekking</h1>
+            
+            <!-- NAVIGAZIONE DA DESKTOP: -->
+            <nav class="desktop-menu">
+                <a href="/laghi.html">Laghi</a>
+                <a href="/camminate.html">Camminate</a>
+                <a href="/rifugi.html">Rifugi</a>
+                <a href="/ristoranti.html">Ristoranti</a>
+            </nav>
+        
+            <button class="hamburger" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div> 
+        
+        <!-- NAVIGAZIONE DA MOBILE: -->
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="/laghi.html">Laghi</a></li>
+                <li><a href="/camminate.html">Camminate</a></li>
+                <li><a href="/rifugi.html">Rifugi</a></li>
+                <li><a href="/ristoranti.html">Ristoranti</a></li>
+            </ul>
+        </nav>
+    
+    </header>
+
+    <main class="pagina-rifugio">
+    
+        <h1 class="titolo-rifugio">Rifugio Marco e Rosa</h1>
+        <h2 class="avvertenza_rifugio">OBBLIGATORIA ATTREZZATURA DA TREKKING PROFESSIONISTICA (corde, ramponi, picozza, imbrago)</h2>
+    
+        <section class="blocco-superiore">
+            
+            <div class="box-foto-rifugio">
+                <img src="/immagine_non_disponibile.jpg" alt="Rifugio Marco e Rosa" class="foto-rifugio">
+                </div>
+    
+            <div class="box-dati-tecnici">
+                <ul>
+                    <li><span class="etichetta-dato no">ALTITUDINE:</span> 3.609 m</li>
+                    <li><span class="etichetta-dato">TEMPO:</span> 4 ore 30 minuti dal Rif. Marinelli  (tot: 8 ore)</li>
+                    <li><span class="etichetta-dato">PARTENZA:</span> Rifugio Marinelli Bombardieri </li>
+                    <li><span class="etichetta-dato">DISLIVELLO:</span> +800m dal Rif. Marinelli  (tot: 1.620m)</li>
+                    <li>
+                        <span class="etichetta-dato">GIRARIFUGI:</span> 
+                        <span class="badge-girarifugi si">SÌ - (★★★)</span>
+                    </li>
+                </ul>
+            </div>
+            
+        </section>
+    
+        <section class="blocco-descrizioni">
+            
+            <div class="sezione-testo">
+                <h3>COME ARRIVARE:</h3>
+                <p>Si parte solitamente dal Rifugio Marinelli Bombardieri (raggiungibile da Campo Moro). Da qui, il percorso si fa alpinistico: si attraversa il ghiacciaio di Scerscen superiore e si risale il versante roccioso della Fortezza, un tratto attrezzato che conduce direttamente alla cresta dove sorge il rifugio, al confine tra Italia e Svizzera.</p>
+            </div>
+    
+            <div class="sezione-testo">
+                <h3>COSA MANGIARE:</h3>
+                <p>Essendo un rifugio d'alta quota che opera in condizioni estreme, il menù è essenziale ma molto apprezzato per la sua qualità in un contesto così difficile. Si possono trovare minestre calde, piatti energetici per alpinisti, polenta con formaggi locali e i classici piatti della tradizione valtellinese, indispensabili per recuperare le energie dopo la fatica della salita.</p>
+            </div>
+    
+            <div class="sezione-testo">
+                <h3>COSA VEDERE:</h3>
+                <p>La posizione è mozzafiato: il rifugio si trova a quasi 3.600 metri, sospeso tra il cielo e i ghiacciai. Dalla sua terrazza si gode di una vista straordinaria sul Pizzo Bernina (la vetta più alta delle Alpi Centrali), sul Pizzo Roseg e sull'immenso anfiteatro glaciale circostante. È una meta leggendaria per gli alpinisti di tutto il mondo.</p>
+            </div>
+    
+        </section>
+    
+    </main>
+
+    <!-- Footer del sito: -->
+    <footer>
+        <p class="footer-line1">&copy; Copyright 2026 by Samuel Fassi. Tutti i diritti riservati.</p>
+        <p class="footer-line2">Sito web dedicato al trekking e alle escursioni in Valmalenco.</p>
+        <p class="footer-email">Contattami via email per segnalazioni o informazioni: <a href="mailto:valmalencotrekking@gmail.com">valmalencotrekking@gmail.com</a></p>
+        <div class="footer-line3">
+            <a href="https://www.youtube.com/channel/UCmB-2SC7HT0yPLan3Nk91rg" target="_blank">YouTube</a>
+                <span>•</span>
+            <a href="https://www.instagram.com/valmalenco_trekking/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- Il menù a tendina:  -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

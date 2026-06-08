@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un sito internet dove si possono vedere tutte le passeggiate della Valmalenco">
+    <meta name="author" content="Samuel Fassi">
+    <link rel="icon" href="/Logo_valmalencotrekking.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <title> Rifugi Valmalenco </title>
+</head>
+<body>
+    <header>
+
+        <div class="barraSopra">
+            <a href="/index.html" class="logo-link">
+                <img src="/Logo_valmalencotrekking.png" width="70" height="70" alt="Logo">
+            </a>
+            
+            <h1>Valmalenco Trekking</h1>
+            
+            <!-- NAVIGAZIONE DA DESKTOP: -->
+            <nav class="desktop-menu">
+                <a href="/laghi.html">Laghi</a>
+                <a href="/camminate.html">Camminate</a>
+                <a href="/rifugi.html">Rifugi</a>
+                <a href="/ristoranti.html">Ristoranti</a>
+            </nav>
+        
+            <button class="hamburger" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div> 
+        
+        <!-- NAVIGAZIONE DA MOBILE: -->
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="/laghi.html">Laghi</a></li>
+                <li><a href="/camminate.html">Camminate</a></li>
+                <li><a href="/rifugi.html">Rifugi</a></li>
+                <li><a href="/ristoranti.html">Ristoranti</a></li>
+            </ul>
+        </nav>
+    
+    </header>
+
+    <main class="pagina-rifugio">
+    
+        <h1 class="titolo-rifugio">Rifugio Tartaglione-Crispo</h1>
+    
+        <section class="blocco-superiore">
+            
+            <div class="box-foto-rifugio">
+                <img src="/immagine_non_disponibile.jpg" alt="Rifugio Tartaglione Crispo" class="foto-rifugio">
+                </div>
+    
+            <div class="box-dati-tecnici">
+                <ul>
+                    <li><span class="etichetta-dato">ALTITUDINE:</span> 1.550 m</li>
+                    <li><span class="etichetta-dato">TEMPO:</span> 40 minuti</li>
+                    <li><span class="etichetta-dato">PARTENZA:</span> Forbicina (Chiareggio)</li>
+                    <li><span class="etichetta-dato">DISLIVELLO:</span> +125m</li>
+                    <li>
+                        <span class="etichetta-dato">GIRARIFUGI:</span> 
+                        <span class="badge-girarifugi si">SÌ - (★☆☆)</span>
+                    </li>
+                </ul>
+            </div>
+            
+        </section>
+    
+        <section class="blocco-descrizioni">
+            
+            <div class="sezione-testo">
+                <h3>COME ARRIVARE:</h3>
+                <p>Si parte solitamente dalla località Forbicina (sopra Chiesa in Valmalenco), raggiungibile in auto. Da lì, si prosegue lungo il sentiero che si inoltra nei prati e nei boschi circostanti con una passeggiata breve e molto piacevole, adatta anche alle famiglie, che conduce direttamente alla struttura.</p>
+            </div>
+    
+            <div class="sezione-testo">
+                <h3>COSA MANGIARE:</h3>
+                <p>La cucina del rifugio è rinomata per la sua autenticità e per i sapori casalinghi. Il menù offre le specialità tipiche della zona: <strong>pizzoccheri fatti in casa, polenta taragna, formaggi locali e gli sciatt</strong>. È il luogo ideale dove fermarsi per gustare un pranzo della tradizione in un'atmosfera gioviale e curata.</p>
+            </div>
+    
+            <div class="sezione-testo">
+                <h3>COSA VEDERE:</h3>
+                <p>Il rifugio è un vero e proprio balcone naturale sulla Valmalenco. Dalla sua terrazza si gode di una vista straordinaria che spazia sull'intero gruppo del Bernina e sulle cime che circondano la valle. È un punto di sosta perfetto per chi cerca tranquillità, sole e panorami mozzafiato senza dover affrontare salite eccessivamente impegnative.</p>
+            </div>
+    
+        </section>
+    
+    </main>
+
+    <!-- Footer del sito: -->
+    <footer>
+        <p class="footer-line1">&copy; Copyright 2026 by Samuel Fassi. Tutti i diritti riservati.</p>
+        <p class="footer-line2">Sito web dedicato al trekking e alle escursioni in Valmalenco.</p>
+        <p class="footer-email">Contattami via email per segnalazioni o informazioni: <a href="mailto:valmalencotrekking@gmail.com">valmalencotrekking@gmail.com</a></p>
+        <div class="footer-line3">
+            <a href="https://www.youtube.com/channel/UCmB-2SC7HT0yPLan3Nk91rg" target="_blank">YouTube</a>
+                <span>•</span>
+            <a href="https://www.instagram.com/valmalenco_trekking/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- Il menù a tendina:  -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

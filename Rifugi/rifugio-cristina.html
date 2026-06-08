@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un sito internet dove si possono vedere tutte le passeggiate della Valmalenco">
+    <meta name="author" content="Samuel Fassi">
+    <link rel="icon" href="/Logo_valmalencotrekking.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <title> Rifugi Valmalenco </title>
+</head>
+<body>
+    <header>
+
+        <div class="barraSopra">
+            <a href="/index.html" class="logo-link">
+                <img src="/Logo_valmalencotrekking.png" width="70" height="70" alt="Logo">
+            </a>
+            
+            <h1>Valmalenco Trekking</h1>
+            
+            <!-- NAVIGAZIONE DA DESKTOP: -->
+            <nav class="desktop-menu">
+                <a href="/laghi.html">Laghi</a>
+                <a href="/camminate.html">Camminate</a>
+                <a href="/rifugi.html">Rifugi</a>
+                <a href="/ristoranti.html">Ristoranti</a>
+            </nav>
+        
+            <button class="hamburger" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div> 
+        
+        <!-- NAVIGAZIONE DA MOBILE: -->
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="/laghi.html">Laghi</a></li>
+                <li><a href="/camminate.html">Camminate</a></li>
+                <li><a href="/rifugi.html">Rifugi</a></li>
+                <li><a href="/ristoranti.html">Ristoranti</a></li>
+            </ul>
+        </nav>
+    
+    </header>
+
+    <main class="pagina-rifugio">
+    
+        <h1 class="titolo-rifugio">Rifugio Cristina</h1>
+    
+        <section class="blocco-superiore">
+            
+            <div class="box-foto-rifugio">
+                <img src="/immagine_non_disponibile.jpg" alt="Rifugio Cristina" class="foto-rifugio">
+                </div>
+    
+            <div class="box-dati-tecnici">
+                <ul>
+                    <li><span class="etichetta-dato">ALTITUDINE:</span> 1.187 m</li>
+                    <li><span class="etichetta-dato">TEMPO:</span> 1 ora 15 minuti</li>
+                    <li><span class="etichetta-dato">PARTENZA:</span> Parcheggio prima di Campo Moro </li>
+                    <li><span class="etichetta-dato">DISLIVELLO:</span> +200m</li>
+                    <li>
+                        <span class="etichetta-dato">GIRARIFUGI:</span> 
+                        <span class="badge-girarifugi si">SÌ - (★★☆)</span>
+                    </li>
+                </ul>
+            </div>
+            
+        </section>
+    
+        <section class="blocco-descrizioni">
+            
+            <div class="sezione-testo">
+                <h3>COME ARRIVARE:</h3>
+                <p>Si parte dal parcheggio di Campo Moro risalendo la strada sterrata soggetta a divieto di transito. Il percorso prosegue dolcemente in quota passando davanti al Rifugio Cà Runcasch e attraversando la bellissima piana dell'Alpe Campagneda. Seguendo le indicazioni, si raggiunge infine il Rifugio Cristina in circa 1 ora e 15 minuti di cammino, con un dislivello molto contenuto e panoramico, adatto a tutti gli escursionisti.</p>
+            </div>
+    
+            <div class="sezione-testo">
+                <h3>COSA MANGIARE:</h3>
+                <p>Il Rifugio Cristina è rinomato per la cura della sua cucina, che valorizza i prodotti del territorio con un tocco di creatività. Tra le specialità da non perdere figurano i pizzoccheri cucinati secondo la tradizione locale, la polenta taragna con carni in umido o funghi porcini, e gli immancabili sciatt. Molto apprezzata è anche la selezione di dolci casalinghi e le crostate di piccoli frutti, ideali per una merenda rigenerante immersi nel verde dell'alpeggio.</p>
+            </div>
+    
+            <div class="sezione-testo">
+                <h3>COSA VEDERE:</h3>
+                <p>Il rifugio si affaccia sulla suggestiva conca del Prabello, dominata dall'imponente ed inconfondibile mole del Pizzo Scalino, che sembra quasi toccare il cielo. Dalla terrazza panoramica è possibile ammirare un panorama che spazia verso il massiccio del Bernina, offrendo scorci unici in ogni stagione. La zona è inoltre famosa per la presenza di piccoli specchi d'acqua alpini che riflettono le vette circostanti, rendendo il paesaggio particolarmente suggestivo.</p>
+            </div>
+    
+        </section>
+    
+    </main>
+
+    <!-- Footer del sito: -->
+    <footer>
+        <p class="footer-line1">&copy; Copyright 2026 by Samuel Fassi. Tutti i diritti riservati.</p>
+        <p class="footer-line2">Sito web dedicato al trekking e alle escursioni in Valmalenco.</p>
+        <p class="footer-email">Contattami via email per segnalazioni o informazioni: <a href="mailto:valmalencotrekking@gmail.com">valmalencotrekking@gmail.com</a></p>
+        <div class="footer-line3">
+            <a href="https://www.youtube.com/channel/UCmB-2SC7HT0yPLan3Nk91rg" target="_blank">YouTube</a>
+                <span>•</span>
+            <a href="https://www.instagram.com/valmalenco_trekking/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- Il menù a tendina:  -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

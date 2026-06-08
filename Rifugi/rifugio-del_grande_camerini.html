@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un sito internet dove si possono vedere tutte le passeggiate della Valmalenco">
+    <meta name="author" content="Samuel Fassi">
+    <link rel="icon" href="/Logo_valmalencotrekking.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <title> Rifugi Valmalenco </title>
+</head>
+<body>
+    <header>
+
+        <div class="barraSopra">
+            <a href="/index.html" class="logo-link">
+                <img src="/Logo_valmalencotrekking.png" width="70" height="70" alt="Logo">
+            </a>
+            
+            <h1>Valmalenco Trekking</h1>
+            
+            <!-- NAVIGAZIONE DA DESKTOP: -->
+            <nav class="desktop-menu">
+                <a href="/laghi.html">Laghi</a>
+                <a href="/camminate.html">Camminate</a>
+                <a href="/rifugi.html">Rifugi</a>
+                <a href="/ristoranti.html">Ristoranti</a>
+            </nav>
+        
+            <button class="hamburger" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div> 
+        
+        <!-- NAVIGAZIONE DA MOBILE: -->
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="/laghi.html">Laghi</a></li>
+                <li><a href="/camminate.html">Camminate</a></li>
+                <li><a href="/rifugi.html">Rifugi</a></li>
+                <li><a href="/ristoranti.html">Ristoranti</a></li>
+            </ul>
+        </nav>
+    
+    </header>
+
+    <main class="pagina-rifugio">
+    
+        <h1 class="titolo-rifugio">Rifugio Del Grande Camerini</h1>
+    
+        <section class="blocco-superiore">
+            
+            <div class="box-foto-rifugio">
+                <img src="/immagine_non_disponibile.jpg" alt="Rifugio del Grande Camerini" class="foto-rifugio">
+                </div>
+    
+            <div class="box-dati-tecnici">
+                <ul>
+                    <li><span class="etichetta-dato">ALTITUDINE:</span> 2.580 m</li>
+                    <li><span class="etichetta-dato">TEMPO:</span> 3 ore 30 minuti</li>
+                    <li><span class="etichetta-dato">PARTENZA:</span> Chiareggio</li>
+                    <li><span class="etichetta-dato">DISLIVELLO:</span> +980m</li>
+                    <li>
+                        <span class="etichetta-dato">GIRARIFUGI:</span> 
+                        <span class="badge-girarifugi si">SÌ - (★★★)</span>
+                    </li>
+                </ul>
+            </div>
+            
+        </section>
+    
+        <section class="blocco-descrizioni">
+            
+            <div class="sezione-testo">
+                <h3>COME ARRIVARE:</h3>
+                <p>Si parte dall'ampio parcheggio in località Pian del Lupo, poco oltre l'abitato di Chiareggio. Seguendo le indicazioni per il sentiero (n. 301-305, Alta Via della Valmalenco), si supera il ponte sul torrente e si risale verso l'Alpe Vazzeda inferiore. Da qui il sentiero prosegue con salita costante e a tratti impegnativa, superando l'Alpe Vazzeda superiore fino a raggiungere la Bocchetta Piattè di Vazzeda, dove sorge la struttura.</p>
+            </div>
+    
+            <div class="sezione-testo">
+                <h3>COSA MANGIARE:</h3>
+                <p>Essendo un rifugio piccolo e gestito dai volontari del CAI (Club Alpino Italiano), la cucina è semplice, autentica e conviviale, pensata per ristorare gli escursionisti dopo la lunga salita. Si possono trovare piatti della tradizione valtellinese preparati in modo casalingo, ideali per recuperare le energie in un ambiente che mantiene ancora intatto lo spirito originale del rifugio di montagna.</p>
+            </div>
+    
+            <div class="sezione-testo">
+                <h3>COSA VEDERE:</h3>
+                <p>Il rifugio è situato in una posizione spettacolare sullo spartiacque tra la Val Sissone e la Val Bona. Dalla sua terrazza si gode di quella che è considerata una delle migliori viste in assoluto sulla imponente e severa parete nord del <strong>Monte Disgrazia</strong>  e sul suo ghiacciaio. È un luogo ideale per gli amanti dell'alpinismo e dell'alta montagna, immerso in un contesto roccioso di grande impatto visivo.</p>
+            </div>
+    
+        </section>
+    
+    </main>
+
+    <!-- Footer del sito: -->
+    <footer>
+        <p class="footer-line1">&copy; Copyright 2026 by Samuel Fassi. Tutti i diritti riservati.</p>
+        <p class="footer-line2">Sito web dedicato al trekking e alle escursioni in Valmalenco.</p>
+        <p class="footer-email">Contattami via email per segnalazioni o informazioni: <a href="mailto:valmalencotrekking@gmail.com">valmalencotrekking@gmail.com</a></p>
+        <div class="footer-line3">
+            <a href="https://www.youtube.com/channel/UCmB-2SC7HT0yPLan3Nk91rg" target="_blank">YouTube</a>
+                <span>•</span>
+            <a href="https://www.instagram.com/valmalenco_trekking/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- Il menù a tendina:  -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
