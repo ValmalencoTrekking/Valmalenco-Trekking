@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un sito internet dove si possono vedere tutte le passeggiate della Valmalenco">
+    <meta name="author" content="Samuel Fassi">
+    <link rel="icon" href="/Logo_valmalencotrekking.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <title> Lago Entova - Valmalenco Trekking </title>
+</head>
+<body>
+    <header>
+
+        <div class="barraSopra">
+            <a href="/index.html" class="logo-link">
+                <img src="/Logo_valmalencotrekking.png" width="70" height="70" alt="Logo">
+            </a>
+            
+            <h1>Valmalenco Trekking</h1>
+            
+            <!-- NAVIGAZIONE DA DESKTOP: -->
+            <nav class="desktop-menu">
+                <a href="/laghi.html">Laghi</a>
+                <a href="/camminate.html">Camminate</a>
+                <a href="/rifugi.html">Rifugi</a>
+                <a href="/ristoranti.html">Ristoranti</a>
+            </nav>
+        
+            <button class="hamburger" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div> 
+        
+        <!-- NAVIGAZIONE DA MOBILE: -->
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="/laghi.html">Laghi</a></li>
+                <li><a href="/camminate.html">Camminate</a></li>
+                <li><a href="/rifugi.html">Rifugi</a></li>
+                <li><a href="/ristoranti.html">Ristoranti</a></li>
+            </ul>
+        </nav>
+    
+    </header>
+
+    <!-- NUOVA STRUTTURA SPECIFICA PER IL SINGOLO LAGO -->
+    <main class="pagina-singolo-lago">
+    
+        <h1 class="titolo-lago-pagina">Lago d'Entova</h1>
+    
+        <!-- La foto ora prende tutta la larghezza, come un panorama reale -->
+        <div class="copertina-lago-box">
+            <img src="/immagine_non_disponibile.jpg" alt="Lago d'Entova" class="foto-copertina-lago">
+        </div>
+    
+        <!-- Dati Tecnici trasformati in pillole orizzontali galleggianti -->
+        <section class="pillole-dati-lago">
+            <div class="pillola"><span class="etichetta-pillola">ALTITUDINE:</span> 2.600 m</div>
+            <div class="pillola"><span class="etichetta-pillola">TEMPO:</span> 3 ore 30 minuti</div>
+            <div class="pillola"><span class="etichetta-pillola">PARTENZA:</span> San Giuseppe</div>
+            <div class="pillola"><span class="etichetta-pillola">DISLIVELLO:</span> +1000m</div>
+            <div class="pillola"><span class="etichetta-pillola">CATEGORIA:</span>Laghi per Esperti</div>
+        </section>
+    
+        <!-- Contenitore testi trasformato in un layout dinamico -->
+        <section class="griglia-descrizioni-lago">
+            
+            <div class="scheda-testo-lago">
+                <div class="icona-testo">📍</div>
+                <h3>COME ARRIVARE:</h3>
+                <p>Si parte da San Giuseppe. Il sentiero più classico risale verso l'Alpe Entova. Il percorso attraversa prima la zona boschiva per poi aprirsi su terreni pascolivi e, infine, su pietraie d'alta quota. L'itinerario è ben segnato ma richiede attenzione, poiché si svolge in un ambiente via via più aspro man mano che ci si avvicina alla conca che ospita il lago, situato ai piedi delle imponenti pareti del massiccio del Disgrazia.</p>
+            </div>
+    
+            <div class="scheda-testo-lago">
+                <div class="icona-testo">💧</div>
+                <h3>CARATTERISTICHE:</h3>
+                <p>Il Lago d'Entova è una meta di alta montagna dal fascino "austero". Si trova in una conca glaciale ed è circondato da un paesaggio roccioso e detritico, lontano dai sentieri più turistici della zona. La sua posizione lo rende un luogo perfetto per chi ama la solitudine e gli ambienti selvaggi, offrendo una vista privilegiata sulle cime circostanti.</p>
+            </div>
+    
+            <div class="scheda-testo-lago">
+                <div class="icona-testo">🥾</div>
+                <h3>CONSIGLI TREKKING:</h3>
+                <p>L'escursione è <strong>classificata come EE (Escursionisti Esperti)</strong>, ma a causa della quota (si superano i 2.500 metri) e del tipo di terreno, richiede una buona preparazione fisica e una solida esperienza di cammino su sentieri di montagna. Assicurati di avere scarponi da trekking a caviglia alta (per proteggere le caviglie sui terreni sassosi) e abbigliamento tecnico adeguato a strati. Controlla sempre il meteo prima di partire, perché a queste altezze le condizioni possono cambiare rapidamente.</p>
+            </div>
+    
+        </section>
+    
+    </main>
+
+    <!-- Footer del sito: -->
+    <footer>
+        <p class="footer-line1">&copy; Copyright 2026 by Samuel Fassi. Tutti i diritti riservati.</p>
+        <p class="footer-line2">Sito web dedicato al trekking e alle escursioni in Valmalenco.</p>
+        <p class="footer-email">Contattami via email per segnalazioni o informazioni: <a href="mailto:valmalencotrekking@gmail.com">valmalencotrekking@gmail.com</a></p>
+        <div class="footer-line3">
+            <a href="https://www.youtube.com/channel/UCmB-2SC7HT0yPLan3Nk91rg" target="_blank">YouTube</a>
+                <span>•</span>
+            <a href="https://www.instagram.com/valmalenco_trekking/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- Il menù a tendina:  -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

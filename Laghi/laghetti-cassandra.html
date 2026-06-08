@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un sito internet dove si possono vedere tutte le passeggiate della Valmalenco">
+    <meta name="author" content="Samuel Fassi">
+    <link rel="icon" href="/Logo_valmalencotrekking.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <title> Laghetti Cassandra - Valmalenco Trekking </title>
+</head>
+<body>
+    <header>
+
+        <div class="barraSopra">
+            <a href="/index.html" class="logo-link">
+                <img src="/Logo_valmalencotrekking.png" width="70" height="70" alt="Logo">
+            </a>
+            
+            <h1>Valmalenco Trekking</h1>
+            
+            <!-- NAVIGAZIONE DA DESKTOP: -->
+            <nav class="desktop-menu">
+                <a href="/laghi.html">Laghi</a>
+                <a href="/camminate.html">Camminate</a>
+                <a href="/rifugi.html">Rifugi</a>
+                <a href="/ristoranti.html">Ristoranti</a>
+            </nav>
+        
+            <button class="hamburger" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div> 
+        
+        <!-- NAVIGAZIONE DA MOBILE: -->
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="/laghi.html">Laghi</a></li>
+                <li><a href="/camminate.html">Camminate</a></li>
+                <li><a href="/rifugi.html">Rifugi</a></li>
+                <li><a href="/ristoranti.html">Ristoranti</a></li>
+            </ul>
+        </nav>
+    
+    </header>
+
+    <!-- NUOVA STRUTTURA SPECIFICA PER IL SINGOLO LAGO -->
+    <main class="pagina-singolo-lago">
+    
+        <h1 class="titolo-lago-pagina">Laghetti di Cassandra</h1>
+    
+        <!-- La foto ora prende tutta la larghezza, come un panorama reale -->
+        <div class="copertina-lago-box">
+            <img src="/immagine_non_disponibile.jpg" alt="Laghetti di Cassandra" class="foto-copertina-lago">
+        </div>
+    
+        <!-- Dati Tecnici trasformati in pillole orizzontali galleggianti -->
+        <section class="pillole-dati-lago">
+            <div class="pillola"><span class="etichetta-pillola">ALTITUDINE:</span> 2.700 m</div>
+            <div class="pillola"><span class="etichetta-pillola">TEMPO:</span> 4 ore 30 minuti </div>
+            <div class="pillola"><span class="etichetta-pillola">PARTENZA:</span> Piasci (sopra Torre S.M.)</div>
+            <div class="pillola"><span class="etichetta-pillola">DISLIVELLO:</span> +1100m</div>
+            <div class="pillola"><span class="etichetta-pillola">CATEGORIA:</span> Laghi Glaciali </div>
+        </section>
+    
+        <!-- Contenitore testi trasformato in un layout dinamico -->
+        <section class="griglia-descrizioni-lago">
+            
+            <div class="scheda-testo-lago">
+                <div class="icona-testo">📍</div>
+                <h3>COME ARRIVARE:</h3>
+                <p>Si raggiunge in auto la località Piasci, sopra Torre di Santa Maria. Dal parcheggio, si segue il sentiero ben segnalato che porta inizialmente al Rifugio Bosio-Galli. Superato il rifugio, si prosegue verso ovest seguendo le indicazioni per il "Passo di Cassandra". Il sentiero si addentra in un ambiente via via più selvaggio, passando per pietraie e zone moreniche fino a raggiungere la conca che ospita i laghetti.</p>
+            </div>
+    
+            <div class="scheda-testo-lago">
+                <div class="icona-testo">💧</div>
+                <h3>CARATTERISTICHE:</h3>
+                <p>Questi laghi sono incastonati in un ambiente d'alta quota, severo e di una bellezza mozzafiato. Sono piccoli specchi d'acqua dal colore blu intenso, situati in un anfiteatro naturale dominato dalle cime e dai ghiacciai del gruppo del Disgrazia. È una zona remota, frequentata quasi esclusivamente da escursionisti che amano gli ambienti alpini puri e solitari.</p>
+            </div>
+    
+            <div class="scheda-testo-lago">
+                <div class="icona-testo">🥾</div>
+                <h3>CONSIGLI TREKKING:</h3>
+                <p>Questa è un'<strong>escursione impegnativa, classificata solitamente come EE (Escursionisti Esperti)</strong> . Il sentiero, specialmente nel tratto superiore dopo il Rifugio Bosio, può essere meno evidente, su terreno sassoso e con pendenze decise. È necessario avere un ottimo allenamento fisico, scarponi da montagna ben rodati e un buon senso dell'orientamento. Assicurati di monitorare bene il meteo, perché a queste quote (2.700 m) il tempo può cambiare repentinamente anche in estate.</p>
+            </div>
+    
+        </section>
+    
+    </main>
+
+    <!-- Footer del sito: -->
+    <footer>
+        <p class="footer-line1">&copy; Copyright 2026 by Samuel Fassi. Tutti i diritti riservati.</p>
+        <p class="footer-line2">Sito web dedicato al trekking e alle escursioni in Valmalenco.</p>
+        <p class="footer-email">Contattami via email per segnalazioni o informazioni: <a href="mailto:valmalencotrekking@gmail.com">valmalencotrekking@gmail.com</a></p>
+        <div class="footer-line3">
+            <a href="https://www.youtube.com/channel/UCmB-2SC7HT0yPLan3Nk91rg" target="_blank">YouTube</a>
+                <span>•</span>
+            <a href="https://www.instagram.com/valmalenco_trekking/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- Il menù a tendina:  -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

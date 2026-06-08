@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un sito internet dove si possono vedere tutte le passeggiate della Valmalenco">
+    <meta name="author" content="Samuel Fassi">
+    <link rel="icon" href="/Logo_valmalencotrekking.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <title> Lago Alpe Gera - Valmalenco Trekking </title>
+</head>
+<body>
+    <header>
+
+        <div class="barraSopra">
+            <a href="/index.html" class="logo-link">
+                <img src="/Logo_valmalencotrekking.png" width="70" height="70" alt="Logo">
+            </a>
+            
+            <h1>Valmalenco Trekking</h1>
+            
+            <!-- NAVIGAZIONE DA DESKTOP: -->
+            <nav class="desktop-menu">
+                <a href="/laghi.html">Laghi</a>
+                <a href="/camminate.html">Camminate</a>
+                <a href="/rifugi.html">Rifugi</a>
+                <a href="/ristoranti.html">Ristoranti</a>
+            </nav>
+        
+            <button class="hamburger" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div> 
+        
+        <!-- NAVIGAZIONE DA MOBILE: -->
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="/laghi.html">Laghi</a></li>
+                <li><a href="/camminate.html">Camminate</a></li>
+                <li><a href="/rifugi.html">Rifugi</a></li>
+                <li><a href="/ristoranti.html">Ristoranti</a></li>
+            </ul>
+        </nav>
+    
+    </header>
+
+    <!-- NUOVA STRUTTURA SPECIFICA PER IL SINGOLO LAGO -->
+    <main class="pagina-singolo-lago">
+    
+        <h1 class="titolo-lago-pagina">Lago Alpe Gera</h1>
+    
+        <!-- La foto ora prende tutta la larghezza, come un panorama reale -->
+        <div class="copertina-lago-box">
+            <img src="/immagine_non_disponibile.jpg" alt="Lago Alpe Gera" class="foto-copertina-lago">
+        </div>
+    
+        <!-- Dati Tecnici trasformati in pillole orizzontali galleggianti -->
+        <section class="pillole-dati-lago">
+            <div class="pillola"><span class="etichetta-pillola">ALTITUDINE:</span> 2.124 m</div>
+            <div class="pillola"><span class="etichetta-pillola">TEMPO:</span> 1 minuto </div>
+            <div class="pillola"><span class="etichetta-pillola">PARTENZA:</span> Alpe Gera </div>
+            <div class="pillola"><span class="etichetta-pillola">DISLIVELLO:</span> 0m </div>
+            <div class="pillola"><span class="etichetta-pillola">CATEGORIA:</span> Relax & Famiglia</div>
+        </section>
+    
+        <!-- Contenitore testi trasformato in un layout dinamico -->
+        <section class="griglia-descrizioni-lago">
+            
+            <div class="scheda-testo-lago">
+                <div class="icona-testo">📍</div>
+                <h3>COME ARRIVARE:</h3>
+                <p>Il bacino <strong>si raggiunge comodamente in auto</strong> percorrendo la strada carrozzabile che sale da Lanzada verso Campo Moro. Una volta superato il Rifugio Poschiavino e il Rifugio Zoia, si prosegue per un brevissimo tratto su strada sterrata (ma accessibile) fino a raggiungere il grande piazzale ai piedi dell'imponente diga di sbarramento.</p>
+            </div>
+    
+            <div class="scheda-testo-lago">
+                <div class="icona-testo">💧</div>
+                <h3>CARATTERISTICHE:</h3>
+                <p>È uno dei bacini artificiali più spettacolari dell'intera Valtellina. Il lago si incastra tra le massicce pareti montuose e, guardando verso sud-est, offre una vista magnifica sulla vedretta di Fellaria e sui ghiacciai che contornano la conca. L'impatto visivo della diga in calcestruzzo è notevole e il contrasto tra l'azzurro intenso dell'acqua e il grigio delle rocce circostanti rende il luogo perfetto per chi ama la fotografia di montagna.</p>
+            </div>
+    
+            <div class="scheda-testo-lago">
+                <div class="icona-testo">🥾</div>
+                <h3>CONSIGLI TREKKING:</h3>
+                <p>Non essendo un'escursione "di salita", il consiglio principale qui è quello di utilizzare il lago come punto di partenza per esplorazioni più lunghe. Da qui, infatti, parte il sentiero per il Rifugio Bignami (circa 45 minuti - 1 ora di cammino facile) o per il magnifico percorso che porta al ghiacciaio di Fellaria. Se decidi di camminare, porta sempre con te una protezione solare (il sole a questa quota riflette molto sull'acqua e sulle rocce) e scarponi adatti se decidi di proseguire oltre la diga.</p>
+            </div>
+    
+        </section>
+    
+    </main>
+
+    <!-- Footer del sito: -->
+    <footer>
+        <p class="footer-line1">&copy; Copyright 2026 by Samuel Fassi. Tutti i diritti riservati.</p>
+        <p class="footer-line2">Sito web dedicato al trekking e alle escursioni in Valmalenco.</p>
+        <p class="footer-email">Contattami via email per segnalazioni o informazioni: <a href="mailto:valmalencotrekking@gmail.com">valmalencotrekking@gmail.com</a></p>
+        <div class="footer-line3">
+            <a href="https://www.youtube.com/channel/UCmB-2SC7HT0yPLan3Nk91rg" target="_blank">YouTube</a>
+                <span>•</span>
+            <a href="https://www.instagram.com/valmalenco_trekking/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- Il menù a tendina:  -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
