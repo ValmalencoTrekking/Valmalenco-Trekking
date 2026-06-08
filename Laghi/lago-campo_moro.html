@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un sito internet dove si possono vedere tutte le passeggiate della Valmalenco">
+    <meta name="author" content="Samuel Fassi">
+    <link rel="icon" href="../Logo_valmalencotrekking.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style.css">
+    <title> Lago Campo Moro - Valmalenco Trekking </title>
+</head>
+<body>
+    <header>
+
+        <div class="barraSopra">
+            <a href="../index.html" class="logo-link">
+                <img src="../Logo_valmalencotrekking.png" width="70" height="70" alt="Logo">
+            </a>
+            
+            <h1>Valmalenco Trekking</h1>
+            
+            <!-- NAVIGAZIONE DA DESKTOP: -->
+            <nav class="desktop-menu">
+                <a href="../laghi.html">Laghi</a>
+                <a href="../camminate.html">Camminate</a>
+                <a href="../rifugi.html">Rifugi</a>
+                <a href="../ristoranti.html">Ristoranti</a>
+            </nav>
+        
+            <button class="hamburger" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div> 
+        
+        <!-- NAVIGAZIONE DA MOBILE: -->
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="../laghi.html">Laghi</a></li>
+                <li><a href="../camminate.html">Camminate</a></li>
+                <li><a href="../rifugi.html">Rifugi</a></li>
+                <li><a href="../ristoranti.html">Ristoranti</a></li>
+            </ul>
+        </nav>
+    
+    </header>
+
+    <!-- NUOVA STRUTTURA SPECIFICA PER IL SINGOLO LAGO -->
+    <main class="pagina-singolo-lago">
+    
+        <h1 class="titolo-lago-pagina">Lago di Campo Moro</h1>
+    
+        <!-- La foto ora prende tutta la larghezza, come un panorama reale -->
+        <div class="copertina-lago-box">
+            <img src="../immagine_non_disponibile.jpg" alt="Lago Campo Moro" class="foto-copertina-lago">
+        </div>
+    
+        <!-- Dati Tecnici trasformati in pillole orizzontali galleggianti -->
+        <section class="pillole-dati-lago">
+            <div class="pillola"><span class="etichetta-pillola">ALTITUDINE:</span> 1.990 m</div>
+            <div class="pillola"><span class="etichetta-pillola">TEMPO:</span> 1 minuto</div>
+            <div class="pillola"><span class="etichetta-pillola">PARTENZA:</span> Campo Moro</div>
+            <div class="pillola"><span class="etichetta-pillola">DISLIVELLO:</span> 0m</div>
+            <div class="pillola"><span class="etichetta-pillola">CATEGORIA:</span> Relax & Famiglia</div>
+        </section>
+    
+        <!-- Contenitore testi trasformato in un layout dinamico -->
+        <section class="griglia-descrizioni-lago">
+            
+            <div class="scheda-testo-lago">
+                <div class="icona-testo">📍</div>
+                <h3>COME ARRIVARE:</h3>
+                <p>Si raggiunge percorrendo la strada carrozzabile che sale da Lanzada in Valmalenco. Una volta superata la frazione di Franscia, la strada prosegue risalendo il fianco della montagna fino ad arrivare direttamente ai piedi dello sbarramento di Campo Moro. È una strada asfaltata, ma è necessario guidare con prudenza a causa dei numerosi tornanti.</p>
+            </div>
+    
+            <div class="scheda-testo-lago">
+                <div class="icona-testo">💧</div>
+                <h3>CARATTERISTICHE:</h3>
+                <p>Il Bacino di Campo Moro è un'imponente opera ingegneristica circondata da uno scenario naturale grandioso. Il lago si inserisce in un anfiteatro di cime che formano il confine con la Svizzera. È un luogo molto amato per la sua accessibilità, che lo rende una base di partenza ideale sia per escursioni facili (come il giro del lago) sia per trekking più impegnativi verso i ghiacciai della Valmalenco.</p>
+            </div>
+    
+            <div class="scheda-testo-lago">
+                <div class="icona-testo">🥾</div>
+                <h3>CONSIGLI TREKKING:</h3>
+                <p>Non essendo una meta di salita, il consiglio è di sfruttarlo come punto di partenza per attività esplorative. Puoi percorrere il sentiero che costeggia il lago per goderti il panorama in tutta calma. Se hai intenzione di proseguire verso il Rifugio Bignami o verso il ghiacciaio di Fellaria (partendo da qui o dalla vicina diga di Gera), assicurati di avere scarponi da trekking, una giacca a vento e una buona scorta di acqua, poiché il terreno in alta quota è privo di ripari.</p>
+            </div>
+    
+        </section>
+    
+    </main>
+
+<!-- Footer del sito: -->
+<footer>
+    <p class="footer-line1">&copy; Copyright 2026 by Samuel Fassi. Tutti i diritti riservati.</p>
+    <p class="footer-line2">Sito web dedicato al trekking e alle escursioni in Valmalenco.</p>
+    <p class="footer-email">Contattami via email per segnalazioni o informazioni: <a href="mailto:valmalencotrekking@gmail.com">valmalencotrekking@gmail.com</a></p>
+    <div class="footer-line3">
+        <a href="https://www.youtube.com/channel/UCmB-2SC7HT0yPLan3Nk91rg" target="_blank">YouTube</a>
+            <span>•</span>
+        <a href="https://www.instagram.com/valmalenco_trekking/" target="_blank">Instagram</a>
+    </div>
+</footer>
+
+    <!-- Il menù a tendina:  -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un sito internet dove si possono vedere tutte le passeggiate della Valmalenco">
+    <meta name="author" content="Samuel Fassi">
+    <link rel="icon" href="../Logo_valmalencotrekking.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style.css">
+    <title> Lagazzuolo - Valmalenco Trekking </title>
+</head>
+<body>
+    <header>
+
+        <div class="barraSopra">
+            <a href="../index.html" class="logo-link">
+                <img src="../Logo_valmalencotrekking.png" width="70" height="70" alt="Logo">
+            </a>
+            
+            <h1>Valmalenco Trekking</h1>
+            
+            <!-- NAVIGAZIONE DA DESKTOP: -->
+            <nav class="desktop-menu">
+                <a href="../laghi.html">Laghi</a>
+                <a href="../camminate.html">Camminate</a>
+                <a href="../rifugi.html">Rifugi</a>
+                <a href="../ristoranti.html">Ristoranti</a>
+            </nav>
+        
+            <button class="hamburger" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div> 
+        
+        <!-- NAVIGAZIONE DA MOBILE: -->
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="../laghi.html">Laghi</a></li>
+                <li><a href="../camminate.html">Camminate</a></li>
+                <li><a href="../rifugi.html">Rifugi</a></li>
+                <li><a href="../ristoranti.html">Ristoranti</a></li>
+            </ul>
+        </nav>
+    
+    </header>
+
+    <!-- NUOVA STRUTTURA SPECIFICA PER IL SINGOLO LAGO -->
+    <main class="pagina-singolo-lago">
+    
+        <h1 class="titolo-lago-pagina">Lagazzuolo</h1>
+    
+        <!-- La foto ora prende tutta la larghezza, come un panorama reale -->
+        <div class="copertina-lago-box">
+            <img src="../immagine_non_disponibile.jpg" alt="Lagazzuolo" class="foto-copertina-lago">
+        </div>
+    
+        <!-- Dati Tecnici trasformati in pillole orizzontali galleggianti -->
+        <section class="pillole-dati-lago">
+            <div class="pillola"><span class="etichetta-pillola">ALTITUDINE:</span> 1.992 m</div>
+            <div class="pillola"><span class="etichetta-pillola">TEMPO:</span> 2 ore 15 minuti</div>
+            <div class="pillola"><span class="etichetta-pillola">PARTENZA:</span> San Giuseppe </div>
+            <div class="pillola"><span class="etichetta-pillola">DISLIVELLO:</span> +650m</div>
+            <div class="pillola"><span class="etichetta-pillola">CATEGORIA:</span> Trekking Selvaggio</div>
+        </section>
+    
+        <!-- Contenitore testi trasformato in un layout dinamico -->
+        <section class="griglia-descrizioni-lago">
+            
+            <div class="scheda-testo-lago">
+                <div class="icona-testo">📍</div>
+                <h3>COME ARRIVARE:</h3>
+                <p>Da San Giuseppe, si imbocca il sentiero che risale verso l'Alpe Lagazzuolo. È un itinerario ben segnalato che si sviluppa inizialmente nel bosco per poi aprirsi sui pascoli alpini. Il tracciato sale con pendenza costante e, dopo aver superato il tratto boschivo, conduce direttamente alla suggestiva conca dove è adagiato il lago.</p>
+            </div>
+    
+            <div class="scheda-testo-lago">
+                <div class="icona-testo">💧</div>
+                <h3>CARATTERISTICHE:</h3>
+                <p>Il Lago di Lagazzuolo è un piccolo bacino alpino dall'aspetto selvaggio e incontaminato. È circondato da un anfiteatro di cime che conferisce al luogo un'atmosfera di grande pace e isolamento. Vicino al lago si trova anche l'omonimo bivacco, che arricchisce il contesto alpino della zona.</p>
+            </div>
+    
+            <div class="scheda-testo-lago">
+                <div class="icona-testo">🥾</div>
+                <h3>CONSIGLI TREKKING:</h3>
+                <p>Il sentiero richiede una buona abitudine al cammino su terreno di montagna. Pur non presentando difficoltà tecniche elevate, <strong>il sentiero è tutto in salita</strong>, quindi è importante mantenere un passo regolare. Si consiglia di indossare scarponi da trekking ben rodati e di avere sempre nello zaino una giacca a vento, anche in estate, dato che la conca può essere soggetta a repentini cambi di temperatura.</p>
+            </div>
+    
+        </section>
+    
+    </main>
+
+    <!-- Footer del sito: -->
+    <footer>
+        <p class="footer-line1">&copy; Copyright 2026 by Samuel Fassi. Tutti i diritti riservati.</p>
+        <p class="footer-line2">Sito web dedicato al trekking e alle escursioni in Valmalenco.</p>
+        <p class="footer-email">Contattami via email per segnalazioni o informazioni: <a href="mailto:valmalencotrekking@gmail.com">valmalencotrekking@gmail.com</a></p>
+        <div class="footer-line3">
+            <a href="https://www.youtube.com/channel/UCmB-2SC7HT0yPLan3Nk91rg" target="_blank">YouTube</a>
+                <span>•</span>
+            <a href="https://www.instagram.com/valmalenco_trekking/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- Il menù a tendina:  -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
