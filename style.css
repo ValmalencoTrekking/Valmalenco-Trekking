@@ -1,0 +1,1297 @@
+/* PARTE 1: CONFIGURAZIONE BASE E RESET */
+@font-face { 
+    font-family: "ubuntu"; 
+    src: url("Ubuntu/Ubuntu-Regular.ttf"); 
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: "ubuntu", Verdana, sans-serif;
+    line-height: 40px;
+    background-color: #fcfcfc;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* PARTE 2: BARRA DI NAVIGAZIONE*/
+.barraSopra {
+    display: flex;
+    align-items: center;
+    background-color: green;
+    padding: 10px 20px;
+    width: 100%;             
+    box-sizing: border-box;   
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 100;
+    justify-content: flex-start; 
+}
+
+.barraSopra h1 {
+    margin: 0 !important; 
+    line-height: 1.1;
+    font-size: 24px;          
+    color: white;
+    margin-left: 10px !important; 
+}
+
+.barraSopra img {
+    display: block;
+    transition: transform 0.25s ease-in-out;
+}
+
+.logo-link:hover img {
+    transform: scale(1.25);
+}
+
+/* AVVISI STRANI NELLA PAGINA PRINCIPALE: */
+.avviso {
+    top: 80px;
+    z-index: 2;
+    margin: 20px auto;
+    width: fit-content;
+    max-width: 90%;
+    text-align: center;
+    padding: 10px 15px;
+    background-color: rgba(255, 0, 0, 0.8);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* --- HAMBURGER MENU --- */
+.hamburger {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; 
+    width: 30px;
+    height: 23px; 
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    margin-left: auto; 
+    position: relative; /* Tiene la X bloccata dentro il bottone verde */
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out; 
+    transform-origin: center; 
+}
+
+.hamburger.active {
+    height: 23px; /* Mantiene l'altezza del bottone costante */
+}
+
+.hamburger.active span:nth-child(1) {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(45deg); /* Centra e ruota la prima linea */
+}
+
+.hamburger.active span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(-45deg); /* Centra e ruota la terza linea */
+}
+
+/* --- NAV MENU MOBILE --- */
+.nav-menu {
+    max-height: 0;            
+    overflow: hidden;         
+    width: 100%;
+    background-color: rgba(248, 249, 250, 0.98) !important; 
+    transition: max-height 0.4s ease-in-out; 
+    position: fixed !important;  
+    top: 85px !important; /* 1. MODIFICA QUESTO: Aumentalo qui (es. da 60px a 85px) per spingere il menu stabilmente più in basso */
+    left: 0 !important;
+    z-index: 9999 !important; 
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.15); 
+}
+
+.nav-menu.active {
+    max-height: 300px; 
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li a {
+    display: block;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    transition: all 0.25s ease-in-out;
+}
+
+
+/* PARTE 3: INTRO (ALLINEATA A SINISTRA)*/
+.intro {
+    background-image: url('Immagini/BASS-Lago_Sassersa.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: flex-start;  /* Forza gli elementi a sinistra */
+    padding-left: 30px;       /* Spazio dal bordo sinistro */
+    margin-top: 60px;         /* Spazio dalla barra fissa */
+}
+
+/* Rimuoviamo il margine enorme e lasciamo che il flex gestisca lo spazio */
+.box-bottone {
+    display: flex;
+    justify-content: flex-start; 
+    margin-top: 15px; /* Basta un piccolo margine per separare il testo dal bottone */
+}
+
+/* Assicuriamoci che il box testo non abbia margini strani */
+.box-testo {
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    border-radius: 15px;
+    color: white;
+    text-align: left;
+    max-width: 500px;
+    margin-bottom: 100px;
+}
+
+.box-testo h1 { 
+    font-size: 3.5rem; 
+    margin: 0; 
+}
+
+.box-testo p { 
+    font-size: 1.5rem; 
+    margin: 10px 0 0; 
+}
+
+/* Bottone con stile corretto */
+.bottone-esplora {
+    background-color: rgba(0, 128, 0, 0.9); 
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: transform 0.3s ease, background 0.3s ease;
+    display: inline-block;
+}
+
+.bottone-esplora:hover {
+    transform: scale(1.15); 
+    background-color: rgba(0, 100, 0, 1); /* Verde leggermente più scuro al passaggio */
+}
+
+/* --- MAIN E FOOTER --- */
+main, .contenuto-principale {
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 20px;
+}
+/* ... resto del tuo footer ... */
+
+/* Bottone semitrasparente a sinistra */
+.bottone-esplora {
+    background: rgba(0, 128, 0, 0.7); 
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.4);
+    transition: transform 0.3s ease, background 0.3s ease;
+    display: inline-block;
+}
+
+.bottone-esplora:hover {
+    transform: scale(1.15); 
+    background: rgba(0, 128, 0, 0.9); 
+}
+
+
+.desktop-menu {
+    display: none; 
+}
+
+main, .contenuto-principale {
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 20px;
+}
+
+.barraSotto {
+    background-color: rgb(0, 128, 0); 
+    color: white;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.barraSotto p {
+    margin: 0 !important;
+    font-size: 14px; 
+    line-height: 1.4;
+    font-family: "ubuntu", Verdana, sans-serif;
+    text-align: center;
+}
+
+
+@media screen and (min-width: 430px) {
+    .barraSopra h1 {
+        font-size: 26px;              
+        margin-left: 35px !important; 
+    }
+}
+
+@media screen and (min-width: 908px) {
+    .barraSopra {
+        padding: 15px 40px;
+    }
+
+    .barraSopra h1 {
+        font-size: 45px;      
+        margin-left: 50px !important; 
+    }
+
+    .hamburger {
+        display: none !important; 
+    }
+
+    .nav-menu {
+        display: none !important; 
+    }
+
+    .desktop-menu {
+        display: flex;       
+        gap: 20px;           
+        font-size: x-large;
+        margin-left: auto; 
+    }
+
+    .desktop-menu a {
+        text-decoration: none;
+        color: white; 
+        font-weight: 600;
+        padding: 10px 15px;
+        transition: all 0.25s ease-in-out;
+        border-radius: 20px;
+        display: inline-block;
+    }
+
+    .desktop-menu a:hover {
+        color: white;             
+        background-color: rgba(255, 255, 255, 0.2);  
+        transform: scale(1.2);
+    }
+    
+    .intro {
+        margin-top: 83px; /* Sui PC la barraSopra si alza, quindi aumentiamo lo spazio */
+    }
+
+    .intro button {
+        margin-left: 50px;
+        margin-bottom: 40px;
+        padding: 24px 48px;
+        border-radius: 50px;
+    }
+    
+    .intro button a {
+        font-size: 30px;
+    }
+
+    main, .contenuto-principale {
+        padding: 60px 40px;
+    }
+
+    .barraSotto {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 40px;
+        gap: 0;
+    }
+
+    .barraSotto p {
+        text-align: left;
+    }
+}
+
+
+/* --- SEZIONE SCHEDE TREKKING (MAIN) --- */
+
+/* Il riquadro principale con bordo rosso e angoli arrotondati */
+/* Modifica la classe .scheda-trekking all'inizio del blocco che ti ho dato prima, sostituendola con questa: */
+.scheda-trekking, .scheda-trekking.inverso {
+    background-color: white;          /* Sfondo bianco del riquadro */
+    border-radius: 20px;              /* Margini arrotondati */
+    margin-bottom: 40px;              /* Spazio vuoto tra un riquadro e l'altro */
+    padding: 20px;                    /* Spazio interno */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);  
+    display: flex;                    
+    flex-direction: column;           
+    gap: 20px;                        
+    align-items: center;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Rende fluido il movimento se ci passi sopra */
+}
+
+.scheda-trekking:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Il contenitore della foto: serve a bloccare i bordi durante lo zoom */
+.foto-box {
+    width: 100%;                      /* Sui telefoni prende tutta la larghezza del riquadro */
+    height: 250px;                    /* Altezza fissa della foto */
+    border-radius: 15px;              /* Arrotonda anche gli angoli della foto */
+    overflow: hidden;                 /* FONDAMENTALE: taglia la foto quando si ingrandisce, impedendole di uscire dal riquadro */
+    position: relative;
+}
+
+/* La foto vera e propria */
+.foto-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;                /* Adatta la foto all'area senza deformarla */
+    transition: transform 0.3s ease-in-out; /* Rende lo zoom fluido e morbido */
+}
+
+/* L'EFFETTO ZOOM: si attiva quando passi con la freccetta sopra il riquadro della foto */
+.foto-box:hover img {
+    transform: scale(1.1);            /* Ingrandisce la foto del 10% */
+}
+
+/* Il contenitore del testo */
+.testo-box {
+    width: 100%;                      /* Sui telefoni prende tutto lo spazio */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.testo-box h2 {
+    margin: 0 0 10px 0 !important;    /* Rimuove i margini di default e lascia solo un po' di spazio sotto */
+    color: #333;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.testo-box p {
+    margin: 0 !important;
+    font-size: 16px;
+    line-height: 1.6;                 /* Rende il testo della descrizione più leggibile e meno compresso */
+    color: #555;
+}
+
+
+
+/* --- MODIFICHE PER SCHERMI GRANDI (PC / COMPUTER) --- */
+@media screen and (min-width: 908px) {
+    
+    .scheda-trekking {
+        flex-direction: row;          /* Sul computer mette foto e testo uno di fianco all'altro */
+        padding: 30px;
+        gap: 40px;                    /* Più respiro tra testo e foto sui PC */
+    }
+
+    /* IL TRUCCO MAGICO: Inverte la posizione nel secondo riquadro (Testo a sinistra, Foto a destra) */
+    .scheda-trekking.inverso {
+        flex-direction: row-reverse;
+    }
+
+    .foto-box {
+        width: 40%;                   /* La foto occupa il 40% del riquadro rosso */
+        height: 300px;                /* Un pelo più alta sui PC */
+        flex-shrink: 0;               /* Impedisce alla foto di rimpicciolirsi o schiacciarsi */
+    }
+
+    .testo-box {
+        width: 60%;                   /* Il testo occupa il restante 60% del riquadro */
+    }
+}
+
+main {
+    /* Spinge in basso tutto il contenuto del main, così non tocca la barra verde */
+    padding-top: 100px; 
+    
+    /* Questo serve a dare un po' di respiro anche ai lati su tutto il sito */
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 1200px; /* Evita che su schermi enormi il testo si allarghi troppo */
+    margin-left: auto;  /* Centra tutto il blocco nello schermo */
+    margin-right: auto;
+}
+
+footer {
+    background-color: rgb(0, 128, 0); /* Sostituisci se il tuo verde ha una sfumatura diversa */
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Prima riga: Copyright */
+.footer-line1 {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0 0 12px 0; /* Resetta i margini e dà spazio sotto */
+}
+
+/* Seconda riga: Info */
+.footer-line2 {
+    font-size: 14px;
+    opacity: 0.9;
+    margin: 0 0 15px 0; /* Spazio prima dei social */
+}
+
+/* Terza riga: Link Social */
+/* Terza riga: Contenitore dei Link Social */
+.footer-line3 {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Spazio fisso tra i link e il puntino */
+}
+
+.footer-line3 a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block; /* FONDAMENTALE: permette l'animazione dello zoom */
+    transition: transform 0.2s ease, opacity 0.2s ease; /* Transizione fluida sia per lo zoom che per la trasparenza */
+}
+
+/* EFFETTO HOVER: Zoom leggero e cambio trasparenza */
+.footer-line3 a:hover {
+    transform: scale(1.12); /* Aumenta la dimensione del 12% */
+    opacity: 0.9;
+}
+
+.footer-line3 span {
+    opacity: 0.5;
+}
+
+
+/* Il CSS del file principale dei rifugi (e dei laghi): */
+
+.avvertenza_rifugio { /* Usato anche per i laghi. */
+    background-color: rgba(255, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 10px;
+    padding-left: 15px;
+}
+.rifugi-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.rifugi-intro h1 {
+    font-family: 'Lexend', sans-serif;
+    color: #2b4c3f;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.rifugi-intro p {
+    color: #666;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* Schede Categorie */
+.categoria-rifugi {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    border-left: 8px solid #ccc;
+    transition: transform 0.2s ease;
+}
+
+.categoria-rifugi:hover {
+    transform: translateY(-2px);
+}
+
+.facile { border-left-color: #2ec460; }
+.intermedio { border-left-color: #ffb703; }
+.difficile { border-left-color: #e63946; }
+
+.categoria-rifugi h2 {
+    font-family: 'Lexend', sans-serif;
+    margin-top: 0;
+    font-size: 1.6rem;
+    color: #222;
+}
+
+/* Badge e Descrizioni */
+.descrizione-difficolta {
+    font-size: 0.95rem;
+    color: #555;
+    background: #f1f5f9;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.badge {
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 5px;
+    background: #334155;
+    color: #fff;
+}
+
+.impegno {
+    margin-left: 30px;
+}
+
+/* Griglia dei Rifugi */
+.categoria-rifugi ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 12px;
+}
+
+.categoria-rifugi li a {
+    display: block;
+    padding: 12px 15px;
+    background: #f8fafc;
+    color: #334155;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.categoria-rifugi li a:hover {
+    background: #334155;
+    color: #ffffff;
+    border-color: #334155;
+    padding-left: 20px;
+}
+
+
+
+
+/* Impostazione delle pagine di OGNI SINGOLO RIFUGIO: */
+/* Il riquadro grosso che contiene tutto: centrato e più largo */
+.pagina-rifugio {
+    max-width: 1200px;
+    margin: 120px auto 30px auto; 
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+/* Titolo in alto */
+.titolo-rifugio {
+    font-family: 'Lexend', sans-serif;
+    color: #2b4c3f;
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+.blocco-superiore {
+    display: table;
+    width: 100%;
+    margin-bottom: 35px;
+    border-collapse: separate;
+}
+
+/* Foto a Sinistra: si prende il 65% della larghezza per essere molto panoramica */
+.box-foto-rifugio {
+    display: table-cell;
+    width: 65%; 
+    vertical-align: top;
+    padding-right: 30px; /* Spazio di distacco dai dati a destra */
+}
+
+.foto-rifugio {
+    width: 100%;
+    /* Questo trucco rende la foto un rettangolo orizzontale perfetto (proporzione 16:9 come la TV) */
+    aspect-ratio: 16 / 9; 
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+}
+
+/* Specifiche a Destra: si prendono il 35% rimanente */
+.box-dati-tecnici {
+    display: table-cell;
+    width: 35%; 
+    vertical-align: middle; 
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    padding: 30px 25px; 
+    box-sizing: border-box;
+}
+
+.box-dati-tecnici ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.box-dati-tecnici li {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    color: #334155;
+    margin-bottom: 20px; 
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.box-dati-tecnici li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.etichetta-dato {
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    color: #475569;
+    margin-right: 8px;
+}
+
+.badge-girarifugi {
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+.badge-girarifugi.si { background-color: #dcfce7; color: #166534; }
+.badge-girarifugi.no { background-color: #fee2e2; color: #991b1b; }
+
+/* BLOCCO INFERIORE: LE TRE DOMANDE/SEZIONI SOTTO */
+.blocco-descrizioni {
+    display: block;
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 30px;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.sezione-testo {
+    margin-bottom: 25px;
+}
+
+.sezione-testo:last-child {
+    margin-bottom: 0;
+}
+
+.sezione-testo h3 {
+    font-family: 'Lexend', sans-serif;
+    color: #1e293b;
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.sezione-testo p {
+    font-family: 'Poppins', sans-serif;
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* Stile per la pagine dei laghi: */
+
+/* Introduzione della pagina */
+.laghi-intro {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 10px;
+}
+
+.laghi-intro h1 {
+    font-family: 'Lexend', sans-serif;
+    color: #0f172a;
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+}
+
+.laghi-intro h3 {
+    color: #0284c7;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.laghi-intro p {
+    color: #64748b;
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* --- I GRANDI RIQUADRI BIANCHI CON OMBRE (Senza Bordo Nero) --- */
+.categoria-laghi {
+    background: #ffffff !important;
+    border: none !important; /* Rimosso completamente il bordo nero */
+    border-radius: 20px !important;
+    padding: 40px 30px !important;
+    margin-bottom: 60px !important;
+    
+    /* Ombra scura, marcata e profonda che dona tridimensionalità */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(0, 0, 0, 0.5); 
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effetto al passaggio del mouse sul riquadro grande */
+.categoria-laghi:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Titoli delle categorie dentro il riquadro */
+.categoria-laghi h2 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 2rem;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 10px !important;
+    text-align: left;
+}
+
+/* Sottotitolo descrittivo dentro il riquadro */
+.descrizione-difficolta-laghi {
+    font-size: 1.05rem;
+    color: #475569;
+    margin-bottom: 40px !important;
+    text-align: left;
+    line-height: 1.5;
+    border-left: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+/* --- LA DISPOSIZIONE A BOLLE DENTRO IL RIQUADRO --- */
+.categoria-laghi ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important; /* Disposizione fluida e libera per differenziarsi dai rifugi */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px; /* Spazio tra le bolle */
+}
+
+/* I LINK DIVENTANO CERCHI PERFETTI (BOLLE) */
+.categoria-laghi li a {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* Forza la forma sferica */
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 50% !important; 
+    
+    padding: 20px !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+    
+    /* Ombra per rendere i cerchi tridimensionali */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), inset 0 -5px 10px rgba(0,0,0,0.6);
+    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+/* --- COLORI SPECIFICI DELLE BOLLE --- */
+
+/* 1. RELAX: Sfumatura Verde Acqua / Smeraldo */
+.lago-relax li a {
+    background: radial-gradient(circle at 30% 30%, #f0fdf4 0%, #bbf7d0 100%);
+    color: #166534;
+    border: 3px solid #86efac;
+}
+/* 2. SELVAGGIO: Sfumatura Blu Vivido */
+.lago-selvaggio li a {
+    background: radial-gradient(circle at 30% 30%, #f0f9ff 0%, #bae6fd 100%);
+    color: #075985;
+    border: 3px solid #7dd3fc;
+}
+/* 3. GLACIALI: Sfumatura Ghiaccio / Pietra d'Alta Quota */
+.lago-glaciale li a {
+    background: radial-gradient(circle at 30% 30%, #f8fafc 0%, #e2e8f0 100%);
+    color: #475569;
+    border: 3px solid #cbd5e1;
+}
+
+/* --- EFFETTO HOVER SULLE BOLLE: SCHIZZANO IN ALTO --- */
+.categoria-laghi li a:hover {
+    transform: scale(1.12) translateY(-12px) !important; /* La bolla cresce e sale */
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* Cambio colore di sfondo al passaggio del mouse */
+.lago-relax li a:hover {
+    background: #12b886;
+}
+.lago-selvaggio li a:hover {
+    background: #0284c7;
+}
+.lago-glaciale li a:hover {
+    background: #475569;
+}
+
+/* Adattamento per dispositivi mobili */
+@media screen and (max-width: 650px) {
+    .categoria-laghi {
+        padding: 30px 15px !important;
+    }
+    .categoria-laghi ul { 
+        gap: 20px; 
+    }
+    .categoria-laghi li a {
+        width: 125px !important;
+        height: 125px !important;
+        font-size: 0.85rem !important;
+        padding: 15px !important;
+    }
+}
+
+
+/* Stile di ogni singolo lago: */
+
+/* Contenitore generale della pagina del lago */
+.pagina-singolo-lago {
+    max-width: 1100px;
+    margin: 120px auto 40px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Titolo pulito, centrato e spazioso */
+.titolo-lago-pagina {
+    font-family: 'Lexend', sans-serif;
+    color: #0f172a;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+/* Quando passi il mouse SOPRA AL BOX, l'immagine si allarga di poco (del 4%) */
+.copertina-lago-box:hover .foto-copertina-lago {
+    transform: scale(1.04);
+}
+
+/* Scatola della grande foto panoramica (Hero) */
+.copertina-lago-box {
+    width: 100%;
+    height: 450px; 
+    border-radius: 20px;
+    overflow: hidden; /* FONDAMENTALE: impedisce alla foto di uscire dai bordi arrotondati */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+}
+
+/* L'immagine dentro al contenitore */
+.foto-copertina-lago {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease; /* Rende lo zoom fluido e morbido */
+}
+
+/* --- LE PILLOLE DEI DATI TECNICI (ORIZZONTALI) --- */
+.pillole-dati-lago {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.pillola {
+    background: #f0f9ff; /* Sfondo chiaro azzurrato */
+    color: #0369a1;
+    padding: 10px 20px;
+    border-radius: 50px; /* Forma a pillola arrotondata */
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid #e0f2fe;
+}
+
+.etichetta-pillola {
+    color: #64748b;
+    font-weight: bold;
+    margin-right: 5px;
+    font-size: 0.85rem;
+}
+
+/* --- LE TRE SEZIONI INFERIORI (STRUTTURA AD AFFIANCAMENTO) --- */
+.griglia-descrizioni-lago {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.scheda-testo-lago {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Ombra morbida senza bordi */
+    transition: transform 0.25s ease;
+}
+
+.scheda-testo-lago:hover {
+    transform: translateY(-10px);
+}
+
+.icona-testo {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.scheda-testo-lago h3 {
+    font-family: 'Lexend', sans-serif;
+    color: #0f172a;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.scheda-testo-lago p {
+    font-family: 'Poppins', sans-serif;
+    color: #475569;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* --- COMPORTAMENTO SUI COMPUTER (PC / SCHERMI GRANDI) --- */
+@media screen and (min-width: 908px) {
+    /* Le 3 schede descrittive si affiancano su 3 colonne invece di stare una sotto l'altra */
+    .griglia-descrizioni-lago {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .scheda-testo-lago {
+        flex: 1; /* Hanno tutte e 3 la stessa identica larghezza */
+    }
+}
+
+/* Ottimizzazione foto per telefoni */
+@media screen and (max-width: 600px) {
+    .copertina-lago-box {
+        height: 250px; /* Riduciamo l'altezza della foto sui telefoni per non occupare troppo schermo */
+    }
+    .titolo-lago-pagina {
+        font-size: 2.2rem;
+    }
+}
+
+
+.pagina-camminate {
+    max-width: 1000px;
+    margin: 140px auto 60px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Introduzione */
+.camminate-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.camminate-intro h1 {
+    font-family: 'Lexend', sans-serif;
+    color: #0f172a;
+    font-size: 2.6rem;
+    margin-bottom: 8px;
+}
+.camminate-intro h3 {
+    color: #047857; /* Verde montagna */
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 0 0 5px 0;
+}
+.camminate-intro p {
+    color: #64748b;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+/* --- I MACRO BLOCCHI DI LUNGHEZZA --- */
+.gruppo-lunghezza {
+    margin-bottom: 60px;
+}
+
+/* Intestazione del gruppo con richiamo ai cartelli CAI */
+.intestazione-gruppo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+}
+
+.segnavia-colore {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* Colori distintivi delle lunghezze */
+.segnavia-colore.breve { background-color: #10b981; } /* Verde */
+.segnavia-colore.medio { background-color: #f59e0b; } /* Giallo/Arancio */
+.segnavia-colore.lungo { background-color: #3b82f6; } /* Blu */
+.segnavia-colore.epico { background-color: #ef4444; } /* Rosso capanna */
+
+.intestazione-gruppo h2 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 1.6rem;
+    color: #1e293b;
+    margin: 0;
+}
+.intestazione-gruppo h2 span {
+    font-size: 1.05rem;
+    color: #64748b;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+/* --- LE CARTE DEI PERCORSI (STILE MINIMAL TIMELINE) --- */
+.elenco-camminate {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.carta-camminata {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    border-left: 5px solid #cbd5e1; /* Bordo laterale neutro di base */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.25s ease;
+}
+
+/* Coloriamo il bordo sinistro in base al blocco per differenziarli al volo */
+.lung-breve .carta-camminata { border-left-color: #10b981; }
+.lung-medio .carta-camminata { border-left-color: #f59e0b; }
+.lung-lungo .carta-camminata { border-left-color: #3b82f6; }
+.lung-epico .carta-camminata { border-left-color: #ef4444; }
+
+/* Effetto dinamico al passaggio del mouse sulla camminata */
+.carta-camminata:hover {
+    transform: translateX(8px); /* Slitta elegantemente a destra */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    background: #f8fafc;
+}
+
+.info-principali {
+    flex: 1;
+}
+
+.info-principali h4 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 1.15rem;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+}
+
+/* La finta Timeline del sentiero:*/
+.tappe-timeline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: inline-block;
+    letter-spacing: 0.3px;
+}
+
+/* I dati tecnici messi sulla destra, chiari e isolati */
+.dati-rapidi {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #334155;
+    white-space: nowrap; /* Evita che vada a capo brutto */
+    background: #f8fafc;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+/* --- RESPONSIVE PER SMARTPHONE --- */
+@media screen and (max-width: 768px) {
+    .carta-camminata {
+        flex-direction: column; /* Su mobile i dati tecnici vanno sotto */
+        align-items: flex-start;
+        gap: 12px;
+        padding: 15px;
+    }
+    .dati-rapidi {
+        align-self: flex-end; /* Sposta il tempo in basso a destra sul telefono */
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+    .tappe-timeline {
+        display: block; /* La linea tappe si allarga a tutta larghezza */
+        font-size: 0.82rem;
+    }
+    .camminate-intro h1 {
+        font-size: 2rem;
+    }
+}
+
+
+/* Stile dei Ristoranti: */
+.ristoranti-intro {
+    margin-top: 10px !important; /* Prova con un valore molto basso */
+    padding-top: 10px;
+    margin-bottom: 40px; /* Questo serve a staccare il titolo dalle card sotto */
+}
+
+.pagina-ristoranti { 
+    width: 85%;
+    max-width: 1400px; 
+    margin: 20px auto; 
+}
+/* Distanziamento dei blocchi */
+.zona-ristorazione { 
+    margin-bottom: 150px; /* Molto spazio tra una categoria e l'altra */
+}
+
+.titolo-zona { 
+    margin-bottom: 60px; 
+    border-bottom: 3px solid #cbd5e1; 
+    padding-bottom: 20px; 
+    font-size: 2.2rem;
+    color: #1e293b;
+}
+
+/* Griglia che si adatta allo spazio */
+.griglia-ristoranti { 
+    display: grid;
+    /* Questa riga crea 2 o 3 colonne se lo schermo è largo, riempiendo tutto */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px; 
+}
+
+/* Riquadri massicci */
+.card-ristorante { 
+    background: #ffffff; 
+    border-radius: 20px; 
+    padding: 50px; /* Padding interno enorme per dare importanza */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+    border: 1px solid #e2e8f0;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Effetto Zoom */
+.card-ristorante:hover {
+    transform: scale(1.04);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Tipografia grande e leggibile */
+.rating-box { 
+    color: #f59e0b; 
+    font-size: 1.8rem; 
+    margin-bottom: 20px; 
+}
+
+.corpo-ristorante h3 { 
+    margin: 0 0 20px 0; 
+    color: #0f172a;
+    font-size: 2rem;
+}
+
+.corpo-ristorante p { 
+    margin: 0 0 30px 0; 
+    line-height: 1.8; 
+    color: #334155;
+    font-size: 1.25rem; /* Testo grande per non sembrare "scritto stretto" */
+}
+
+/* Info servizio */
+.info-servizio {
+    font-size: 1.1rem;
+    color: #64748b;
+    border-top: 2px solid #f1f5f9;
+    padding-top: 20px;
+    margin-top: auto;
+    display: flex;
+    gap: 20px;
+}

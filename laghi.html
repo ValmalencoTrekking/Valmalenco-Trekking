@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un sito internet dove si possono vedere tutte le passeggiate della Valmalenco">
+    <meta name="author" content="Samuel Fassi">
+    <link rel="icon" href="Logo_valmalencotrekking.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title> Laghi Valmalenco </title>
+</head>
+<body>
+    <header>
+
+        <div class="barraSopra">
+            <a href="index.html" class="logo-link">
+                <img src="Logo_valmalencotrekking.png" width="70" height="70" alt="Logo">
+            </a>
+            
+            <h1>Valmalenco Trekking</h1>
+            
+            <!-- NAVIGAZIONE DA DESKTOP: -->
+            <nav class="desktop-menu">
+                <a href="laghi.html">Laghi</a>
+                <a href="camminate.html">Camminate</a>
+                <a href="rifugi.html">Rifugi</a>
+                <a href="ristoranti.html">Ristoranti</a>
+            </nav>
+        
+            <button class="hamburger" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div> 
+        
+        <!-- NAVIGAZIONE DA MOBILE: -->
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="laghi.html">Laghi</a></li>
+                <li><a href="camminate.html">Camminate</a></li>
+                <li><a href="rifugi.html">Rifugi</a></li>
+                <li><a href="ristoranti.html">Ristoranti</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- AGGIORNAMENTO 2026: STRADA PER LANZADA CHIUSA: -->
+    <br><br><br>
+    <h2 class="avviso" style="position: sticky; top: 110px;">Attenzione: strada per Franscia e Campo Moro CHIUSA PER FRANA.</h2>
+
+
+    
+    <!-- Raggruppiamo i laghi con le nuove classi specifiche: -->
+    <main>
+        <section class="laghi-intro">
+            <h1><strong>I Laghi della Valmalenco:</strong></h1>
+            <h3>Esplora gli specchi d'acqua più belli in base al tipo di avventura che cerchi</h3>
+            <p>Clicca su un Lago per vederne le caratteristiche</p>
+        </section>
+
+        <br>
+    
+        <!-- CATEGORIA 1: RELAX E FAMIGLIA (Stile Celeste/Acqua Chiara) -->
+        <section class="categoria-laghi lago-relax">
+            <h2>🌲 Laghi da Relax & Famiglia:</h2>
+            <p class="descrizione-difficolta-laghi">
+                Raggiungibili in meno di un'ora, con sentieri larghi, prati per fare il pic-nic e rifugi vicini per mangiare.
+            </p>
+            <ul>
+                <li><a href="Laghi/lago-palù.html">Lago Palù</a></li>
+                <li><a href="Laghi/lago-campo_moro.html">Lago di Campo Moro</a></li>
+                <li><a href="Laghi/lago-alpe_gera.html">Lago di Alpe Gera</a></li>
+            </ul>
+        </section>
+    
+        <br><br>
+    
+        <!-- CATEGORIA 2: TREKKING SELVAGGIO (Stile Blu Profondo) -->
+        <section class="categoria-laghi lago-selvaggio">
+            <h2>🥾 Laghi da Trekking Selvaggio:</h2>
+            <p class="descrizione-difficolta-laghi">
+                Per chi vuole camminare sul serio, superare pietraie e trovarsi isolato in mezzo alla natura incontaminata.
+            </p>
+            <ul>
+                <li><a href="Laghi/lago-pirola.html">Lago Pirola</a></li>
+                <li><a href="Laghi/laghi-campagneda.html">Laghetti di Campagneda</a></li>
+                <li><a href="Laghi/lagazzuolo.html">Lagazzuolo</a></li>
+                <li><a href="Laghi/laghi-prabello.html">Laghi Prabello</a></li>
+                <li><a href="Laghi/laghetto-alpe_ventina.html">Laghetto dell'Alpe Ventina</a></li>
+                <li><a href="Laghi/lago-arcoglio.html">Lago d'Arcoglio</a></li>
+            </ul>
+        </section>
+    
+        <br><br>
+    
+        <!-- CATEGORIA 3: LAGHI GLACIALI (Stile Ghiaccio/Invernale) -->
+        <section class="categoria-laghi lago-glaciale">
+            <h2>🏔️ Laghi per Esperti:</h2>
+            <p class="descrizione-difficolta-laghi">
+                Specchi d'acqua spettacolari ma quasi lunari, situati ad altissime quote dove c'è ancora la neve o il ghiaccio.
+            </p>
+            <ul>
+                <li><a href="Laghi/laghetti-cassandra.html">Laghetti di Cassandra</a></li>
+                <li><a href="Laghi/lago-entova.html">Lago d'Entova</a></li>
+                <li><a href="Laghi/laghi-sassersa.html">Laghetti di Sassersa</a></li>
+                <li><a href="Laghi/lago-marson.html">Lago Marson (Fellarìa)</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer del sito: -->
+    <footer>
+        <p class="footer-line1">&copy; Copyright 2026 by Samuel Fassi. Tutti i diritti riservati.</p>
+        <p class="footer-line2">Sito web dedicato al trekking e alle escursioni in Valmalenco.</p>
+        <p class="footer-email">Contattami via email per segnalazioni o informazioni: <a href="mailto:valmalencotrekking@gmail.com">valmalencotrekking@gmail.com</a></p>
+        <div class="footer-line3">
+            <a href="https://www.youtube.com/channel/UCmB-2SC7HT0yPLan3Nk91rg" target="_blank">YouTube</a>
+                <span>•</span>
+            <a href="https://www.instagram.com/valmalenco_trekking/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- Il menù a tendina:  -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
