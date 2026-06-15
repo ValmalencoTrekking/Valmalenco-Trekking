@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un sito internet dove si possono vedere tutte le passeggiate della Valmalenco">
+    <meta name="author" content="Samuel Fassi">
+    <link rel="icon" href="Logo_valmalencotrekking.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <title> Mappa Valmalenco </title>
+
+    <!-- Google AdSense:-->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6217878242218318"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="barraSopra">
+        <a href="index.html" class="logo-link">
+            <img src="Logo_valmalencotrekking.png" width="70" height="70" alt="Logo">
+        </a>
+        
+        <h1>Valmalenco Trekking</h1>
+        
+        <nav class="desktop-menu">
+            <a href="laghi.html">Laghi</a>
+            <a href="camminate.html">Camminate</a>
+            <a href="rifugi.html">Rifugi</a>
+            <a href="contatti.html">Contatti</a>
+        </nav>
+    
+        <button class="hamburger" id="hamburger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div> 
+    
+    <nav class="nav-menu" id="nav-menu">
+        <ul>
+            <li><a href="laghi.html">Laghi</a></li>
+            <li><a href="camminate.html">Camminate</a></li>
+            <li><a href="rifugi.html">Rifugi</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <br><br><br>
+    <h2 class="avviso" style="position: sticky; top: 110px;">Attenzione: strada per Franscia e Campo Moro CHIUSA PER FRANA.</h2>
+
+
+    <main class="contenuto-principale" style="margin-top: 0; padding: 20px; box-sizing: border-box;">
+        
+        <h2 style="font-size: 26px; color: rgb(0, 128, 0); margin-bottom: 5px; ">Mappa Esplorativa:</h2>
+        <p style="color: #666; margin-bottom: 20px; line-height: 30px; ">Tu sei il segnalino blu.<br>Tutto il mondo è oscurato: muoviti nella zona illuminata per scoprire i sentieri della Valmalenco!</p>
+        <p style="color: #666; margin-bottom: 20px; line-height: 30px; ">Questa mappa mostra tutti i possibili sentieri di una destinazione:</p>
+        <p style="color: #ff6200; line-height: 1px; "><strong>(linee tratteggiate arancioni)</strong></p>
+        <p style="color: #666; margin-bottom: 20px; line-height: 50px; ">Zoommare per vedere: </p>
+        
+        <div id="mappa" style="width: 100%; height: 65vh; border-radius: 20px; box-shadow: 0px 8px 30px rgba(0,0,0,0.7); background-color: #f0f0f0; position: relative; z-index: 1;"></div>
+
+    </main>
+
+
+    <!-- Footer del sito: -->
+    <footer>
+        <p class="footer-line1">&copy; Copyright 2026 by Samuel Fassi. Tutti i diritti riservati.</p>
+        <p class="footer-line2">Sito web dedicato al trekking e alle escursioni in Valmalenco.</p>
+        <p class="footer-email">Contattami via email per segnalazioni o informazioni: <a href="mailto:valmalencotrekking@gmail.com">valmalencotrekking@gmail.com</a></p>
+        <div class="footer-line3">
+            <a href="https://www.youtube.com/channel/UCmB-2SC7HT0yPLan3Nk91rg" target="_blank">YouTube</a>
+                <span>•</span>
+            <a href="https://www.instagram.com/valmalenco_trekking/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <script src="script_mappa.js"></script>
+
+
+</body>
+</html>
